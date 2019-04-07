@@ -186,7 +186,14 @@
                                         <Label FontFamily="{StaticResource LatoRegular}"
                                                FontSize="12"
                                                Text="{Binding RatingVotes}"
-                                               TextColor="#ccc" />
+                                               TextColor="#666">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding Rating, StringFormat='{0,-5}'}" />
+                                                    <Span Text="{Binding Votes, StringFormat='({0} votes)'}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
                                     </StackLayout>
                                 </Grid>
                             </custom:PancakeView>

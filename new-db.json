@@ -1,0 +1,24 @@
+{
+    "places": {
+        "recommended": {
+            "title": "Seattle, USA",
+            "image_url": "seattle.jpg",
+            "rating": "4.3",
+            "votes": "3478"
+        },
+        "hot_places": [
+            {
+                "title": "Ulun Danu Beratan Temple",
+                "image_url": "bali.jpg",
+                "rating": "4.4",
+                "votes": "3829"
+            },
+            {
+                "title": "Isola d'Elba",
+                "image_url": "elba.jpg",
+                "rating": "4.9",
+                "votes": "9783"
+            }
+        ]
+    }
+}
