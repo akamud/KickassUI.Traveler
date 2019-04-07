@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace Traveler.iOS
 {
@@ -22,10 +23,15 @@ namespace Traveler.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
 
-            LoadApplication(new App());
+            var xfApplication = new App(new iOSInitializer());
+
+#if DEBUG
+            HotReloader.Current.Start(xfApplication, 4291);
+#endif
+
+            LoadApplication(xfApplication);
 
             return base.FinishedLaunching(app, options);
         }

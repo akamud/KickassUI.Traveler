@@ -1,11 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Prism.Navigation;
 using Traveler.Models;
+using Traveler.Services;
+using Xamarin.Forms;
 
 namespace Traveler
 {
-    public class MainPageViewModel
+    public class MainPageViewModel : BindableObject, INavigatingAware
     {
-        public List<Destination> Destinations { get; set; } = new List<Destination>();
+        private readonly ITripAdvisorService _tripAdvisorService;
+
+        public TripAdvisorResponse TripAdvisorResponse { get; set; }
+
+        public MainPageViewModel(ITripAdvisorService tripAdvisorService)
+        {
+            _tripAdvisorService = tripAdvisorService;
+        }
+
+        public async void OnNavigatingTo(INavigationParameters parameters)
+        {
+            TripAdvisorResponse = await _tripAdvisorService.GetDestinations();
+        }
     }
 }

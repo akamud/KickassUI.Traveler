@@ -1,10 +1,5 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
 
@@ -18,12 +13,15 @@ namespace Traveler.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
-
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            LoadApplication(new App());
+            var xfApplication = new App(new AndroidInitializer());
+#if DEBUG
+            HotReloader.Current.Start(xfApplication, 4290);
+#endif
+
+            LoadApplication(xfApplication);
         }
     }
 }
