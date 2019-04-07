@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Traveler.Models;
-using Xamarin.Forms;
 
 namespace Traveler.Services
 {

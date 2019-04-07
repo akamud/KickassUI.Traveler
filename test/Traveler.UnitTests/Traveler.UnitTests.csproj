@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.11.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="FakeItEasy" Version="5.1.0" />
+    <PackageReference Include="FakeItEasy.Analyzer.CSharp" Version="5.1.0" />
+    <PackageReference Include="Flurl.Http" Version="2.4.1" />
+    <PackageReference Include="Autofac.Extras.FakeItEasy" Version="5.0.1" />
+    <PackageReference Include="FluentAssertions" Version="5.6.0" />
+    <PackageReference Include="FluentAssertions.Analyzers" Version="0.11.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Support\" />
+    <Folder Include="Specs\" />
+    <Folder Include="Specs\Services\" />
+    <Folder Include="Fakes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Traveler\Traveler.csproj" />
+  </ItemGroup>
+</Project>
