@@ -1,9 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using System.Diagnostics;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Prism;
 using Prism.Ioc;
 using Traveler.Services;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -27,7 +29,11 @@ namespace Traveler
                 }
             };
 
-            await NavigationService.NavigateAsync($"{nameof(MainPage)}");
+#if DEBUG
+            Log.Listeners.Add(new DelegateLogListener((c, m) => Debug.WriteLine(m, c)));
+#endif
+
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -37,6 +43,7 @@ namespace Traveler
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<PlacePage, PlacePageViewModel>();
         }
 
         protected override void OnStart()

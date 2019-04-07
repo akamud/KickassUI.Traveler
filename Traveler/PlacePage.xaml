@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage x:Class="Traveler.MainPage"
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="Traveler.PlacePage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:effect="clr-namespace:Traveler.Effects"
-             NavigationPage.HasNavigationBar="false"
+             Title="{Binding Destination.Title}"
              BackgroundColor="#f3f5f6">
     <StackLayout>
         <custom:PancakeView HeightRequest="400"
@@ -15,67 +15,7 @@
                 <Image HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand"
                        Aspect="AspectFill"
-                       Source="{Binding TripAdvisorResponse.RecommendedDestination.ImageUrl}" />
-                <StackLayout>
-                    <StackLayout VerticalOptions="Start"
-                                 Orientation="Horizontal"
-                                 Spacing="0">
-                        <StackLayout.Margin>
-                            <OnPlatform x:TypeArguments="Thickness">
-                                <On Platform="iOS" Value="0,12,0,0" />
-                                <On Platform="Android" Value="0,24,0,0" />
-                            </OnPlatform>
-                        </StackLayout.Margin>
-                        <StackLayout.Effects>
-                            <effect:SafeAreaPaddingEffect />
-                        </StackLayout.Effects>
-                        <StackLayout Margin="20,0,20,0" Spacing="0">
-                            <StackLayout.Margin>
-                                <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="iOS" Value="20,0,20,0" />
-                                    <On Platform="Android" Value="20,0,20,20" />
-                                </OnPlatform>
-                            </StackLayout.Margin>
-                            <Label FontFamily="{StaticResource LatoBlack}"
-                                   FontSize="22"
-                                   Text="Hi Steven,"
-                                   TextColor="#fff" />
-                            <Label FontFamily="{StaticResource LatoBlack}"
-                                   FontSize="22"
-                                   Text="Where do you want to go?"
-                                   TextColor="#fff" />
-                        </StackLayout>
-                        <Label Margin="0,0,20,0"
-                               HorizontalOptions="EndAndExpand"
-                               VerticalOptions="Center"
-                               FontFamily="{StaticResource FontAwesomeRegular}"
-                               FontSize="24"
-                               Text=""
-                               TextColor="#fff" />
-                    </StackLayout>
-                    <custom:PancakeView Margin="20,0"
-                                        HeightRequest="50"
-                                        HorizontalOptions="FillAndExpand"
-                                        VerticalOptions="Start"
-                                        BackgroundColor="#44ffffff"
-                                        CornerRadius="8">
-                        <StackLayout Margin="20,0"
-                                     VerticalOptions="Center"
-                                     Orientation="Horizontal">
-                            <Label Margin="0,0,12,0"
-                                   VerticalOptions="Center"
-                                   FontFamily="{StaticResource FontAwesomeSolid}"
-                                   FontSize="20"
-                                   Text=""
-                                   TextColor="#fff" />
-                            <Entry HorizontalOptions="FillAndExpand"
-                                   VerticalOptions="Center"
-                                   BackgroundColor="Transparent"
-                                   FontFamily="{StaticResource LatoRegular}"
-                                   TextColor="#fff" />
-                        </StackLayout>
-                    </custom:PancakeView>
-                </StackLayout>
+                       Source="{Binding Destination.ImageUrl}" />
                 <custom:PancakeView HeightRequest="100"
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="End"
@@ -92,7 +32,7 @@
                                      Spacing="0">
                             <Label FontFamily="{StaticResource LatoBold}"
                                    FontSize="24"
-                                   Text="{Binding TripAdvisorResponse.RecommendedDestination.Title}"
+                                   Text="{Binding Destination.Title}"
                                    TextColor="Black" />
                             <Label FontFamily="{StaticResource LatoRegular}"
                                    FontSize="16"
@@ -126,12 +66,12 @@
                                     <FormattedString>
                                         <Span FontFamily="{StaticResource LatoBold}"
                                               FontSize="16"
-                                              Text="{Binding TripAdvisorResponse.RecommendedDestination.Rating,
+                                              Text="{Binding Destination.Rating,
                                                              StringFormat='{0,-5}'}"
                                               TextColor="#2a2a2a" />
                                         <Span FontFamily="{StaticResource LatoRegular}"
                                               FontSize="12"
-                                              Text="{Binding TripAdvisorResponse.RecommendedDestination.Votes,
+                                              Text="{Binding Destination.Votes,
                                                              StringFormat='({0} votes)'}"
                                               TextColor="#2a2a2a" />
                                     </FormattedString>
@@ -148,63 +88,11 @@
                    VerticalOptions="Center"
                    FontFamily="{StaticResource LatoBold}"
                    FontSize="20"
-                   Text="Hot places"
+                   Text="Description"
                    TextColor="Black" />
-            <Label Margin="20,20,20,0"
-                   HorizontalOptions="EndAndExpand"
-                   VerticalOptions="Center"
-                   FontFamily="{StaticResource LatoBold}"
-                   FontSize="12"
-                   Text="SEE ALL"
-                   TextColor="#2687ee" />
         </StackLayout>
-        <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
-            <StackLayout HeightRequest="120"
-                         BindableLayout.ItemsSource="{Binding TripAdvisorResponse.Destinations}"
-                         Orientation="Horizontal"
-                         x:Name="hotPlacesList"
-                         Spacing="0">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Padding="10,0">
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Path=BindingContext.ShowDestinationCommand, Source={x:Reference hotPlacesList}}" CommandParameter="{Binding .}" />
-                            </Grid.GestureRecognizers>
-                            <custom:PancakeView WidthRequest="200"
-                                                HeightRequest="120"
-                                                CornerRadius="12"
-                                                IsClippedToBounds="true">
-                                <Grid>
-                                    <Image Aspect="AspectFill" Source="{Binding ImageUrl}" />
-                                    <custom:PancakeView HorizontalOptions="FillAndExpand"
-                                                        VerticalOptions="FillAndExpand"
-                                                        BackgroundGradientEndColor="#222"
-                                                        BackgroundGradientStartColor="Transparent" />
-                                    <StackLayout Margin="12"
-                                                 VerticalOptions="EndAndExpand"
-                                                 Spacing="0">
-                                        <Label FontFamily="{StaticResource LatoBold}"
-                                               FontSize="16"
-                                               Text="{Binding Title}"
-                                               TextColor="#fff" />
-                                        <Label FontFamily="{StaticResource LatoRegular}"
-                                               FontSize="12"
-                                               Text="{Binding RatingVotes}"
-                                               TextColor="#666">
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span Text="{Binding Rating, StringFormat='{0,-5}'}" />
-                                                    <Span Text="{Binding Votes, StringFormat='({0} votes)'}" />
-                                                </FormattedString>
-                                            </Label.FormattedText>
-                                        </Label>
-                                    </StackLayout>
-                                </Grid>
-                            </custom:PancakeView>
-                        </Grid>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
+        <ScrollView Margin="20,0">
+            <Label Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />
         </ScrollView>
         <StackLayout Orientation="Horizontal">
             <Label Margin="20,20,20,0"
