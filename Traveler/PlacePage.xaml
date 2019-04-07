@@ -29,7 +29,8 @@
                                      Margin="20,0,0,0"
                                      VerticalOptions="Center"
                                      Spacing="0">
-                            <Label FontFamily="{StaticResource LatoBold}"
+                            <Label AutomationId="Destination Title"
+                                   FontFamily="{StaticResource LatoBold}"
                                    FontSize="24"
                                    Text="{Binding Destination.Title}"
                                    TextColor="Black" />
@@ -56,6 +57,7 @@
                             </Label>
                             <Label Margin="0,8,0,0"
                                    HorizontalOptions="Center"
+                                   AutomationId="Destination Rating"
                                    FontFamily="{StaticResource LatoRegular}"
                                    FontSize="16"
                                    HorizontalTextAlignment="Center"
@@ -91,7 +93,7 @@
                    TextColor="Black" />
         </StackLayout>
         <ScrollView Margin="20,0">
-            <Label Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />
+            <Label AutomationId="Destination Description" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />
         </ScrollView>
         <StackLayout Orientation="Horizontal">
             <Label Margin="20,20,20,0"

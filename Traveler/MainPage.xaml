@@ -4,8 +4,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:effect="clr-namespace:Traveler.Effects"
-             NavigationPage.HasNavigationBar="false"
-             BackgroundColor="#f3f5f6">
+             BackgroundColor="#f3f5f6"
+             NavigationPage.HasNavigationBar="false">
     <StackLayout>
         <custom:PancakeView HeightRequest="400"
                             HorizontalOptions="Fill"
@@ -90,7 +90,8 @@
                                      Margin="20,0,0,0"
                                      VerticalOptions="Center"
                                      Spacing="0">
-                            <Label FontFamily="{StaticResource LatoBold}"
+                            <Label AutomationId="Recommended Destination Title"
+                                   FontFamily="{StaticResource LatoBold}"
                                    FontSize="24"
                                    Text="{Binding TripAdvisorResponse.RecommendedDestination.Title}"
                                    TextColor="Black" />
@@ -117,6 +118,7 @@
                             </Label>
                             <Label Margin="0,8,0,0"
                                    HorizontalOptions="Center"
+                                   AutomationId="Recommended Destination Rating"
                                    FontFamily="{StaticResource LatoRegular}"
                                    FontSize="16"
                                    HorizontalTextAlignment="Center"
@@ -127,12 +129,12 @@
                                         <Span FontFamily="{StaticResource LatoBold}"
                                               FontSize="16"
                                               Text="{Binding TripAdvisorResponse.RecommendedDestination.Rating,
-                                                             StringFormat='{0,-5}'}"
+                                                             &#xA;                                                             StringFormat='{0,-5}'}"
                                               TextColor="#2a2a2a" />
                                         <Span FontFamily="{StaticResource LatoRegular}"
                                               FontSize="12"
                                               Text="{Binding TripAdvisorResponse.RecommendedDestination.Votes,
-                                                             StringFormat='({0} votes)'}"
+                                                             &#xA;                                                             StringFormat='({0} votes)'}"
                                               TextColor="#2a2a2a" />
                                     </FormattedString>
                                 </Label.FormattedText>
@@ -159,10 +161,10 @@
                    TextColor="#2687ee" />
         </StackLayout>
         <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
-            <StackLayout HeightRequest="120"
+            <StackLayout x:Name="hotPlacesList"
+                         HeightRequest="120"
                          BindableLayout.ItemsSource="{Binding TripAdvisorResponse.Destinations}"
                          Orientation="Horizontal"
-                         x:Name="hotPlacesList"
                          Spacing="0">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
@@ -183,7 +185,8 @@
                                     <StackLayout Margin="12"
                                                  VerticalOptions="EndAndExpand"
                                                  Spacing="0">
-                                        <Label FontFamily="{StaticResource LatoBold}"
+                                        <Label AutomationId="Hot Place Title"
+                                               FontFamily="{StaticResource LatoBold}"
                                                FontSize="16"
                                                Text="{Binding Title}"
                                                TextColor="#fff" />

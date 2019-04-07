@@ -25,6 +25,10 @@ namespace Traveler.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
+#if ENABLE_TEST_CLOUD
+                Xamarin.Calabash.Start();
+#endif
+
             var xfApplication = new App(new iOSInitializer());
 
 #if DEBUG

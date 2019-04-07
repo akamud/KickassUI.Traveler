@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Prism;
 using Prism.Ioc;
+using Traveler.Fakes;
 using Traveler.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -39,7 +40,12 @@ namespace Traveler
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<IHttpClientFactory, HttpClientFactory>();
+
+#if ENABLE_TEST_CLOUD
+            containerRegistry.Register<ITripAdvisorService, FakeTripAdvisorService>();
+#else
             containerRegistry.Register<ITripAdvisorService, TripAdvisorService>();
+#endif
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
