@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="nunit" Version="3.11.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.12.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="FakeItEasy" Version="5.1.0" />
     <PackageReference Include="FakeItEasy.Analyzer.CSharp" Version="5.1.0" />
@@ -16,6 +16,8 @@
     <PackageReference Include="Autofac.Extras.FakeItEasy" Version="5.0.1" />
     <PackageReference Include="FluentAssertions" Version="5.6.0" />
     <PackageReference Include="FluentAssertions.Analyzers" Version="0.11.4" />
+    <PackageReference Include="Bogus" Version="26.0.2" />
+    <PackageReference Include="AutoBogus" Version="2.2.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +25,7 @@
     <Folder Include="Specs\" />
     <Folder Include="Specs\Services\" />
     <Folder Include="Fakes\" />
+    <Folder Include="Specs\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Traveler\Traveler.csproj" />

@@ -2,6 +2,9 @@
 <module type="RIDER_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <content url="file://$USER_HOME$/.nuget/packages/nunit3testadapter/3.13.0/build/netcoreapp1.0/NUnit3.TestAdapter.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/nunit3testadapter/3.13.0/build/netcoreapp1.0/NUnit3.TestAdapter.pdb" />
+    <content url="file://$USER_HOME$/.nuget/packages/nunit3testadapter/3.13.0/build/netcoreapp1.0/nunit.engine.netstandard.dll" />
     <content url="file://$USER_HOME$/.nuget/packages/xamarin.android.arch.lifecycle.runtime/1.0.3.1/proguard" />
     <content url="file://$USER_HOME$/.nuget/packages/xamarin.android.support.animated.vector.drawable/27.0.2.1/proguard" />
     <content url="file://$USER_HOME$/.nuget/packages/xamarin.android.support.core.ui/27.0.2.1/proguard" />

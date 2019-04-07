@@ -1,5 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using FluentAssertions;
 using NUnit.Framework;
+using Traveler.Models;
 using Traveler.Services;
 using Traveler.UnitTests.Support;
 
@@ -46,6 +49,42 @@ namespace Traveler.UnitTests.Specs.Services
             await _tripAdvisorService.GetDestinations();
 
             _httpTest.ShouldHaveCalled($"{_localhostAddress}/destinations");
+        }
+
+        [Test]
+        public async Task GetDestinationsShouldReturnTripAdvisorResponseCorrectly()
+        {
+            _httpTest.RespondWith(validJson);
+
+            var destinations = await _tripAdvisorService.GetDestinations();
+
+            destinations.Should().BeEquivalentTo(new TripAdvisorResponse
+            {
+                RecommendedDestination = new Destination
+                {
+                    ImageUrl = "seattle.jpg",
+                    Rating = 4.3f,
+                    Votes = 3478,
+                    Title = "Seattle, USA"
+                },
+                Destinations  = new List<Destination>
+                {
+                    new Destination
+                    {
+                        Title = "Ulun Danu Beratan Temple",
+                        ImageUrl ="bali.jpg",
+                        Rating = 4.4f,
+                        Votes = 3829
+                    },
+                    new Destination
+                    {
+                        Title = "Isola d'Elba",
+                        ImageUrl ="elba.jpg",
+                        Rating = 4.9f,
+                        Votes = 9783
+                    }
+                }
+            });
         }
     }
 }

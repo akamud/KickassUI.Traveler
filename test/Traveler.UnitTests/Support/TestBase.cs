@@ -1,5 +1,7 @@
 ﻿using Autofac.Extras.FakeItEasy;
 using Flurl.Http.Testing;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using NUnit.Framework;
 
 namespace Traveler.UnitTests.Support

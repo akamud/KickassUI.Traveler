@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/.idea.Traveler/Traveler.Android.iml" filepath="$PROJECT_DIR$/.idea/.idea.Traveler/Traveler.Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/.idea.Traveler/riderModule.iml" filepath="$PROJECT_DIR$/.idea/.idea.Traveler/riderModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/.idea.Traveler/src__Traveler.Android.iml" filepath="$PROJECT_DIR$/.idea/.idea.Traveler/src__Traveler.Android.iml" />
     </modules>
   </component>
 </project>
