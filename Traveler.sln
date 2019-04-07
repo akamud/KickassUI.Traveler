@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traveler.iOS", "Traveler.iO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traveler", "Traveler\Traveler.csproj", "{290BD554-185D-4987-A538-281EAF036E5F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0054007C-D91E-48FC-B6ED-8FF0DB9EB86A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{28487401-16F6-4ABE-B71F-60BFEC3E95A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,5 +71,10 @@ Global
 		{290BD554-185D-4987-A538-281EAF036E5F}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
 		{290BD554-185D-4987-A538-281EAF036E5F}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
 		{290BD554-185D-4987-A538-281EAF036E5F}.AppStore|iPhone.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{290BD554-185D-4987-A538-281EAF036E5F} = {28487401-16F6-4ABE-B71F-60BFEC3E95A3}
+		{6AE553EE-F225-4423-AB60-2F45D3B97ACA} = {28487401-16F6-4ABE-B71F-60BFEC3E95A3}
+		{01BAD4A4-B0D2-4569-A00D-ABFE90E4E67E} = {28487401-16F6-4ABE-B71F-60BFEC3E95A3}
 	EndGlobalSection
 EndGlobal

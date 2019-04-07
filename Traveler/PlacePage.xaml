@@ -3,7 +3,6 @@
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             xmlns:effect="clr-namespace:Traveler.Effects"
              Title="{Binding Destination.Title}"
              BackgroundColor="#f3f5f6">
     <StackLayout>
