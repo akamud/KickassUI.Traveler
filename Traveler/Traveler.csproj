@@ -22,7 +22,7 @@
     <DebugType></DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhoneSimulator\UITest</OutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>;UITEST;NETSTANDARD;NETSTANDARD2_0;ENABLE_TEST_CLOUD</DefineConstants>
     <NoWarn></NoWarn>
     <NoStdLib>false</NoStdLib>
   </PropertyGroup>
