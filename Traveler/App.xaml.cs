@@ -40,13 +40,7 @@ namespace Traveler
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<IHttpClientFactory, HttpClientFactory>();
-
-#if ENABLE_TEST_CLOUD
-            containerRegistry.Register<ITripAdvisorService, FakeTripAdvisorService>();
-#else
             containerRegistry.Register<ITripAdvisorService, TripAdvisorService>();
-#endif
-
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<PlacePage, PlacePageViewModel>();
