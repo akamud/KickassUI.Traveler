@@ -11,13 +11,13 @@ namespace Traveler.UnitTests.Specs.Services
     public class TripAdvisorServiceTests : TestBase
     {
         private TripAdvisorService _tripAdvisorService;
-        private string validJson = @"{""recommended_destination"": {
+        private string validJson = @"{""recommended"": {
             ""title"": ""Seattle, USA"",
             ""image_url"": ""seattle.jpg"",
             ""rating"": ""4.3"",
             ""votes"": ""3478""
         },
-        ""destinations"": [
+        ""hot_places"": [
             {
                 ""title"": ""Ulun Danu Beratan Temple"",
                 ""image_url"": ""bali.jpg"",
@@ -48,7 +48,7 @@ namespace Traveler.UnitTests.Specs.Services
 
             await _tripAdvisorService.GetDestinations();
 
-            _httpTest.ShouldHaveCalled($"{_localhostAddress}/destinations");
+            _httpTest.ShouldHaveCalled($"{_localhostAddress}/places");
         }
 
         [Test]

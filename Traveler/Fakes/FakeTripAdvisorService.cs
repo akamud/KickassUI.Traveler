@@ -7,13 +7,13 @@ namespace Traveler.Fakes
 {
     public class FakeTripAdvisorService : ITripAdvisorService
     {
-        private string validJson = @"{""recommended_destination"": {
+        private string validJson = @"{""recommended"": {
             ""title"": ""Seattle, USA"",
             ""image_url"": ""seattle.jpg"",
             ""rating"": ""4.3"",
             ""votes"": ""3478""
         },
-        ""destinations"": [
+        ""hot_places"": [
             {
                 ""title"": ""Ulun Danu Beratan Temple"",
                 ""image_url"": ""bali.jpg"",

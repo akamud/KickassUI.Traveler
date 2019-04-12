@@ -193,7 +193,7 @@
                                         <Label FontFamily="{StaticResource LatoRegular}"
                                                FontSize="12"
                                                Text="{Binding RatingVotes}"
-                                               TextColor="#666">
+                                               TextColor="#CCC">
                                             <Label.FormattedText>
                                                 <FormattedString>
                                                     <Span Text="{Binding Rating, StringFormat='{0,-5}'}" />

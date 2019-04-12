@@ -18,7 +18,7 @@ namespace Traveler.Services
 
         public async Task<TripAdvisorResponse> GetDestinations()
         {
-            var destinationsJson = await _httpClient.GetStringAsync("destinations");
+            var destinationsJson = await _httpClient.GetStringAsync("places");
 
             return JsonConvert.DeserializeObject<TripAdvisorResponse>(destinationsJson);
         }
