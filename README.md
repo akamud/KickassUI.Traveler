@@ -1,10 +1,7 @@
-# KickButtUI.Traveler 🙈
+# Xamarin + TDD
 
-A Xamarin.Forms version of the Traveler app to prove you can create good-looking UI with Xamarin.Forms as talked about in my blogpost on: 
+Demo da [palestra](https://www.slideshare.net/akamud/xamarin-tdd-reagindo-rpido-mudanas-no-mundo-mobile) sobre Xamarin + TDD - Reagindo rápido à mudanças no mundo Mobile.
 
-**Tools used**
-- MFractor – Productivity tools for Visual Studio Mac – https://www.mfractor.com/
-- LiveXAML – Live simulator updates for your XAML code – http://www.livexaml.com
-- PancakeView - Layout element with additional features - https://github.com/sthewissen/Xamarin.Forms.PancakeView
+App utilizado: [KickassUI.Traveler](https://github.com/sthewissen/KickassUI.Traveler) criado pelo [Steven Thewissen](https://github.com/sthewissen).
 
-<img src="https://github.com/sthewissen/KickassUI.Traveler/blob/master/both.png" width="700px"/>
+<img src="https://github.com/akamud/KickassUI.Traveler/blob/master/both.png" width="700px"/>
