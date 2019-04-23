@@ -17,7 +17,7 @@ namespace Traveler.UITests
 
             return ConfigureApp
                 .iOS
-                .DeviceIdentifier("FB26DC00-B409-45A9-A422-8115EBDCD3A8")
+                .DeviceIdentifier("96EF74AB-F08E-4353-81B6-708249C6CF7C")
                 .InstalledApp("io.thewissen.Traveler")
                 .StartApp(AppDataMode.Clear);
         }
