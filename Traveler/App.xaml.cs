@@ -5,6 +5,8 @@ using Prism;
 using Prism.Ioc;
 using Traveler.Fakes;
 using Traveler.Services;
+using Xamarin.Essentials.Implementation;
+using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -41,6 +43,7 @@ namespace Traveler
         {
             containerRegistry.Register<IHttpClientFactory, HttpClientFactory>();
             containerRegistry.Register<ITripAdvisorService, TripAdvisorService>();
+            containerRegistry.Register<IConnectivity, ConnectivityImplementation>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<PlacePage, PlacePageViewModel>();
