@@ -1,4 +1,5 @@
-﻿using Xamarin.UITest;
+﻿using System;
+using Xamarin.UITest;
 using Xamarin.UITest.Configuration;
 
 namespace Traveler.UITests
@@ -14,6 +15,8 @@ namespace Traveler.UITests
                     .InstalledApp("io.thewissen.Traveler")
                     .StartApp(AppDataMode.Clear);
             }
+
+            Environment.SetEnvironmentVariable("UITEST_FORCE_IOS_SIM_RESTART", "1");
 
             return ConfigureApp
                 .iOS

@@ -6,6 +6,7 @@ using Traveler.Models;
 using Traveler.Services;
 using Traveler.UnitTests.Support;
 
+#pragma warning disable CS1701, CS1702 // Assuming assembly reference matches identity
 namespace Traveler.UnitTests.Specs.Services
 {
     public class TripAdvisorServiceTests : TestBase
@@ -88,3 +89,4 @@ namespace Traveler.UnitTests.Specs.Services
         }
     }
 }
+#pragma warning restore CS1701,CS1702 // Assuming assembly reference matches identity
